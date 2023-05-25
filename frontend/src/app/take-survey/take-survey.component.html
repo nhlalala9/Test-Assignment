@@ -1,1 +1,89 @@
+<div class="background" style="background-color: #F5F5F5;">
+    <!-- <div class="container mt-5"> -->
+    <div class="row justify-content-center align-items-center">
+        <div class="col-12 col-lg-9 col-xl-7">
+            <div class="card shadow-2-strong card-registration" style="border-radius: 15px">
+                <div class="card-body p-4 p-md-5">
+                    <h3 class="mb-42 pb-2 pb-md-0 mb-md-5">Take a survey</h3>
+                    <form >
+                        <h4>Personal Details:</h4>
+                        <div class="form-group col mb-4">
+                            <label>Surname </label>
+                            <input type="text" id="q"  formControlName="surname"
+                                placeholder="Surname" class="form-control"
+                                 />
+                            <div  class="invalid-feedback">
+                                <div >
+                                    Surname is required
+                                </div>
+                            </div>
+                            <div class="form-group col mb-4">
+                                <label>Survey Description:</label>
+                                <input type="text"  formControlName="description"
+                                    placeholder="Enter Description " class="form-control"  />
+                                <div  class="invalid-feedback">
+                                    <div >
+                                        Description is required
+                                    </div>
+                                </div>
+                                <div class="form-group col mb-4">
+                                    <label>code:</label>
+                                    <input type="text"  formControlName="survey_id"
+                                        placeholder="Enter Code " class="form-control"  />
+                                    <div class="invalid-feedback">
+                                        <div >
+                                            Code is required
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <div class="form-group col mb-4">
+                                    <label>Choose survey status: </label>
+                                    <select formControlName="status" class="form-control"
+                                        placeholder="Select status of the survey" >
+                                        <option value disabled selected hidden>
+                                            Select survey status...
+                                        </option>
+                                        <option value="Deactivated">Deactive</option>
+                                        <option value="Active">Activate</option>
+                                    </select>
+                                    <div  class="invalid-feedback">
+                                        <div >
+                                            survey status is required
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+
+                                <h4>Enter survey questions and answers</h4>
+                                <div class="alert alert-info" role="alert">
+                                    <ul>
+                                        <li> Define 1-5 mutually exclusive selections to each question</li>
+                                        <li> Enter 10 questions to make up a survey</li>
+                                    </ul>
+                                </div>
+                                <!-- =======================================================================-->
+                                <div class="blue" >
+                                    <div class="form-group col mb-4">
+                                        <label>Enter question:</label>
+                                        <input type="text" formControlName="question" placeholder="Enter question"
+                                            class="form-control"  />
+                                        <div  class="invalid-feedback">
+                                            <div >
+                                                question is required
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                               
+                                
+
+                                <!-- buttons -->
+                                <div class="form-group">
+                                    <button type="submit"  class="btn btn-warning x">
+                                        Submit
+                                    </button>
+                                </div>
+                            </div>
