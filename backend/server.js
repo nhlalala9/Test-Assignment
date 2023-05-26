@@ -9,7 +9,7 @@ app.use(cors(corsOptions));
 // connecting the database
 const db = require("./app/models");
 db.mongoose
-    .connect(db.url, {
+.connect(db.url, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
@@ -41,7 +41,7 @@ app.get("/", (req, res) => {
 require("./app/routes/survey.routes")(app);
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8082;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
 });
