@@ -1,37 +1,36 @@
-<div class="background" style="background-color: #F5F5F5;">
-    <!-- <div class="container mt-5"> -->
+<!-- <div class="background" style="background-color: #F5F5F5;">
+    
     <div class="row justify-content-center align-items-center">
         <div class="col-12 col-lg-9 col-xl-7">
             <div class="card shadow-2-strong card-registration" style="border-radius: 15px">
                 <div class="card-body p-4 p-md-5">
                     <h3 class="mb-42 pb-2 pb-md-0 mb-md-5">Take a survey</h3>
-                    <form >
+                    <form>
                         <h4>Personal Details:</h4>
                         <div class="form-group col mb-4">
                             <label>Surname </label>
-                            <input type="text" id="q"  formControlName="surname"
-                                placeholder="Surname" class="form-control"
-                                 />
-                            <div  class="invalid-feedback">
-                                <div >
+                            <input type="text" id="q" formControlName="surname" placeholder="Surname"
+                                class="form-control" />
+                            <div class="invalid-feedback">
+                                <div>
                                     Surname is required
                                 </div>
                             </div>
                             <div class="form-group col mb-4">
                                 <label>First Names:</label>
-                                <input type="text"  formControlName="First Names"
-                                    placeholder="First Names " class="form-control"  />
-                                <div  class="invalid-feedback">
-                                    <div >
+                                <input type="text" formControlName="First Names" placeholder="First Names "
+                                    class="form-control" />
+                                <div class="invalid-feedback">
+                                    <div>
                                         First Names is required
                                     </div>
                                 </div>
                                 <div class="form-group col mb-4">
                                     <label>Contact Number:</label>
-                                    <input type="text"  formControlName="Contact Number"
-                                        placeholder="Contact Number " class="form-control"  />
+                                    <input type="text" formControlName="Contact Number" placeholder="Contact Number "
+                                        class="form-control" />
                                     <div class="invalid-feedback">
-                                        <div >
+                                        <div>
                                             Contact Number is required
                                         </div>
                                     </div>
@@ -39,18 +38,93 @@
 
                                 <div class="form-group col mb-4">
                                     <label>Date:</label>
-                                    <input type="text"  formControlName="Contact Number"
-                                        placeholder="Date "  class="form-control"  />
-                                        <span id="currentDate"></span>
-                                    
+                                    <input type="text" formControlName="Contact Number" placeholder="Date "
+                                        class="form-control" />
+                                    <span id="currentDate"></span>
+
                                 </div>
                                 <hr />
 
-                            
-                                <!-- buttons -->
+
+                               
                                 <div class="form-group">
-                                    <button type="submit"  class="btn ">
+                                    <button type="submit" class="btn ">
                                         Submit
                                     </button>
                                 </div>
-                            </div>
+    </div> -->
+
+<body>
+    <h1>Take a survey</h1>
+
+    <!-- Create Form -->
+    <form id="form">
+        <h4>Personal Details:</h4>
+
+        <!-- Details -->
+        <div class="form-control">
+            <label for="name" id="label-name">
+                Surname
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text" id="surname" />
+        </div>
+
+        <div class="form-control">
+            <label for="names" id="label-firstnames">
+                First Names
+            </label>
+
+            <!-- Input Type firstnames-->
+            <input type="firstnames" id="firstnames" />
+        </div>
+        <div class="form-control">
+            <label for="contact number" id="label-contact number">
+                Contact number
+            </label>
+
+            <!-- Input Type Email-->
+            <input type="firstnames" id="firstnames" />
+        </div>
+
+        <div class="form-control">
+            <label for="date" id="label-date">
+                Date
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text" id="age" />
+        </div>
+        <div class="form-control">
+            <label for="age" id="label-age">
+                Age
+            </label>
+
+            <!-- Input Type Text -->
+            <input type="text" id="age" />
+        </div>
+
+        <div class="form-control">
+            <label>What is your favourite food? (You can choose more than 1 answer)
+            </label>
+            <!-- Input Type Checkbox -->
+            <label for="inp-1">
+                <input type="radio" name="inp"> Pizza</label>
+            <label for="inp-2">
+                <input type="radio" name="inp"> Pasta</label>
+            <label for="inp-3">
+                <input type="radio" name="inp"> Pap and Wors</label>
+            <label for="inp-4">
+                <input type="radio" name="inp"> Chicken stir fry</label>
+            <label for="inp-5">
+                <input type="radio" name="inp"> Beef stir fry</label>
+            <label for="inp-6">
+                <input type="radio" name="inp"> Other</label>
+        </div>
+        <!-- Multi-line Text Input Control -->
+        <button type="submit" value="submit">
+            Submit
+        </button>
+    </form>
+</body>
