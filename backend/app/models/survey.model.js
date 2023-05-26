@@ -3,9 +3,9 @@ module.exports = mongoose => {
       "survey",
       mongoose.Schema(
         {
-          title: String,
-          description: String,
-          published: Boolean
+          surname: String,
+          firstnames: String,
+          contactnumber:String
         },
         { timestamps: true }
       )
