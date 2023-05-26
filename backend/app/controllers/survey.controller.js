@@ -1,5 +1,5 @@
 const db = require("../models");
-const Survey = db.Surveys;
+const Survey = db.surveys;
 
 // Create and Save a new survey
 exports.create = (req, res) => {
