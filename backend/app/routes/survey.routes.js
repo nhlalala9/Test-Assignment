@@ -11,7 +11,7 @@ module.exports = app => {
     router.get("/", surveys.findAll);
 
     // Retrieve a single Survey with id
-    router.get("/", surveys.findOne);
+    router.get("/:id", surveys.findOne);
 
     // Update a Survey with id
     router.put("/:id", surveys.update);
