@@ -58,7 +58,7 @@
     <h1>Take a survey</h1>
 
     <!-- Create Form -->
-    <form id="form">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()"  id="form">
         <h4>Personal Details:</h4>
 
         <!-- Details -->
@@ -108,7 +108,7 @@
         <div class="form-control">
             <label>What is your favourite food? (You can choose more than 1 answer)
             </label>
-            <!-- Input Type Checkbox -->
+           
             <label for="inp-1">
                 <input type="radio" name="inp"> Pizza</label>
             <label for="inp-2">
@@ -122,9 +122,66 @@
             <label for="inp-6">
                 <input type="radio" name="inp"> Other</label>
         </div>
-        <!-- Multi-line Text Input Control -->
-        <button type="submit" value="submit">
-            Submit
-        </button>
-    </form>
-</body>
+        <div class="card">
+        <div class="row d-flex justify-content-center align-items-center">
+            <div *ngIf="loaded" class="col-md-8">
+                <h1 id="register ">{{ title }}</h1>
+                <div class="card w-100 bg-base-100 shadow-xl">
+                    <div class="card-body bg-slate-200">
+                        <form >
+                            <p class="fw-bold"></p>
+                            <br />
+                            <div class="wrapper" *ngFor="let question of surveyQuestions">
+                                <div *ngIf="question.type === 'text'">
+                                    <label class="fw-bold mb-8"><b>{{question.title}}</b></label><br>
+                                    <input required [formControlName]="question.name" [value]="question.value"
+                                        [id]="question.name" class="form-text-input input-text" type="text"
+                                        placeholder="{{question.title}}" id="radioExample1" />
+                                </div>
+                                <br>
+
+                                <div *ngIf="question.type === 'rating'">
+                                    <label class="fw-bold mb-8"><b>{{question.title}}</b></label><br>
+                                    <input required [formControlName]="question.name" [id]="question.name"
+                                        class="form-text-input input-text" type="text" placeholder="{{question.title}}"
+                                        id="radioExample1" />
+                                </div>
+                                <br>
+                                <div cl *ngIf="question.type === 'radiogroup'">
+                                    <label class="fw-bold mb-8"><b>{{question.title}}</b></label><br>
+                                    <div class="form-check mb-2" *ngFor="let choice of question.choices">
+                                        <input required [formControlName]="question.name" [value]="choice.value"
+                                            class="form-check-input" type="radio" />
+                                        <label class="form-check-label" for="radioExample1">
+                                            {{choice.text}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <br>
+                                <div *ngIf="question.type === 'comment'">
+                                    <label class="fw-bold mb-8"><b>{{question.title}}</b></label><br>
+                                    <textarea required [formControlName]="question.name" [id]="question.name"
+                                        class="input-text sd-comment sd-input" id="sq_101i" cols="50" rows="4"
+                                        placeholder="" aria-required="false"
+                                        aria-label="What can we do to make your experience more satisfying?"
+                                        aria-invalid="false" style="resize: both;"></textarea>
+                                    <div *ngIf="question.name.errors?.['required']">
+                                        {{question.title}} is required.
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                <!-- Multi-line Text Input Control -->
+                <button type="submit" value="submit">
+                    Submit
+                </button>
+ </form>
+
+<body>
