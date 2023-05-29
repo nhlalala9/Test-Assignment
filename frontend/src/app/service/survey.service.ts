@@ -23,8 +23,8 @@ export class SurveyService {
     return this.http.get(API_URL+'template/'+title, { responseType: 'json' });
   }
 
-  saveSurvey(survey:any): Observable<any> {
-    console.log(survey, 'on save');
-    return this.http.post(API_URL, survey);
+  saveSurvey(surveys:any): Observable<any> {
+    console.log(surveys, 'on save');
+    return this.http.post(API_URL, surveys);
   }
 }
