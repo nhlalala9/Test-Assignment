@@ -1,8 +1,7 @@
-const questionSurvey = require("../controllers/questionSurvey.controller");
 
 module.exports = app => {
    
-  
+  const questionSurvey = require("../controllers/questionSurvey.controller");
    
     var router = require("express").Router();
 
