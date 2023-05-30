@@ -7,7 +7,7 @@ import { TakeSurveyComponent } from './take-survey/take-survey.component';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'take-survey',component:TakeSurveyComponent},
-  {path:'survey-result',component:SurveyResultsComponent}
+  {path:'survey-results',component:SurveyResultsComponent}
 
 ];
 
