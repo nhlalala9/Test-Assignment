@@ -24,7 +24,7 @@ module.exports = app => {
     // Delete all Surveys
     router.delete("/", questionSurvey.deleteAll);
 
-    app.use('/api/surveys', router);
+    app.use('/api/questionSurvey', router);
   
     
     
