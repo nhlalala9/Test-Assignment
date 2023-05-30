@@ -33,7 +33,7 @@ exports.create = (req, res) => {
 
 // Find all surveys
 exports.findAll = (req, res) => {
-    QuestionsSurvey.find({})
+    questionsSurvey.find({})
         .then((data) => {
             res.send(data);
         })
@@ -47,7 +47,7 @@ exports.findAll = (req, res) => {
 exports.findOne = (req, res) => {
     const id = req.params.id;
 
-    QuestionsSurvey.findById(id)
+    questionsSurvey.findById(id)
         .then(data => {
             if (!data)
                 res.status(404).send({ message: "Not found Survey with id " + id });
@@ -62,7 +62,7 @@ exports.findOne = (req, res) => {
 
 exports.findByTitle = (req, res) => {
     const title = req.params.title;
-    QuestionsSurvey.find({ title: title })
+    questionsSurvey.find({ title: title })
         .then(data => {
             res.send(data);
         })
@@ -83,7 +83,7 @@ exports.update = (req, res) => {
 
     const id = req.params.id;
 
-    QuestionsSurvey.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    questionsSurvey.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then(data => {
             if (!data) {
                 res.status(404).send({
@@ -107,7 +107,7 @@ exports.patch = (req, res) => {
 
     const id = req.params.id;
 
-    QuestionsSurvey.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
+    questionsSurvey.findByIdAndUpdate(id, req.body, { useFindAndModify: false })
         .then(data => {
             if (!data) {
                 res.status(404).send({
@@ -125,7 +125,7 @@ exports.patch = (req, res) => {
 exports.delete = (req, res) => {
     const id = req.params.id;
 
-    QuestionsSurvey.findByIdAndRemove(id)
+    questionsSurvey.findByIdAndRemove(id)
         .then(data => {
             if (!data) {
                 res.status(404).send({
@@ -146,7 +146,7 @@ exports.delete = (req, res) => {
 
 // Delete all Surveys from the database.
 exports.deleteAll = (req, res) => {
-    QuestionsSurvey.deleteMany({})
+    questionsSurvey.deleteMany({})
         .then(data => {
             res.send({
                 message: `${data.deletedCount} Surveys were deleted successfully!`
