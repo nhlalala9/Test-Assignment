@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TakeSurveyComponent } from './take-survey/take-survey.component';
+import { SurveyResultsComponent } from './survey-results/survey-results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    TakeSurveyComponent
+    TakeSurveyComponent,
+    SurveyResultsComponent
   ],
   imports: [
     BrowserModule,
