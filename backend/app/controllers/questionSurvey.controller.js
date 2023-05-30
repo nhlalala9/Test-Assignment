@@ -5,18 +5,20 @@ exports.create = (req, res) => {
  
     // Create a Post
     // Validate request
-    if (!req.body.surname) {
+    if (!req.body.title) {
         res.status(400).send({ message: "Content can not be empty!" });
         return;
     }
 
     // Create a survey
-    const questions = new QuestionsSurvey({
+    const question = new QuestionsSurvey({
          title: req.body.title,
+         questions: req.body.questions
+
     })
 
     // Save Post in the database
-    questions
+    question
         .save()
         .then((data) => {
             res.send(data);
