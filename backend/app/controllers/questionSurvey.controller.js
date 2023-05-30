@@ -1,10 +1,19 @@
-const QuestionsSurvey = require("../models/questionSurvey.model")
+const db = require("../models");
+const QuestionsSurvey = db.questionSurvey;
 
 exports.create = (req, res) => {
-    const surveyData = req.body;
-
+ 
     // Create a Post
-    const questions = new QuestionsSurvey(surveyData);
+    // Validate request
+    if (!req.body.surname) {
+        res.status(400).send({ message: "Content can not be empty!" });
+        return;
+    }
+
+    // Create a survey
+    const questions = new QuestionsSurvey({
+         title: req.body.title,
+    })
 
     // Save Post in the database
     questions
